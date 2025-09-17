@@ -52,7 +52,7 @@ I used **Power Query (M language)** for cleaning and structuring the dataset.
 
 ---
 
-- During analysis, I detected a typo (‘Caardio’ instead of ‘Cardio’). The error was corrected in the cleaning stage to maintain consistency
+- During analysis, I detected 2 typos (‘Caardio’ instead of ‘Cardio’, "Shoulder" instead of "Shoulders"). The errors were corrected in the cleaning stage to maintain consistency
 
 ## 🚀 Skills Demonstrated
 - Data cleaning and transformation with **Power Query (M language)**  
