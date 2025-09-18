@@ -91,10 +91,9 @@ While consistency was maintained, some weeks included longer breaks for deeper r
 Overall, most rests were **short (1–2 days)**, complemented by occasional longer breaks.
 
 ### 11. Average Session Volume
-Excluding cardio and null entries, the **47 recorded training days** consistently involved **3 muscle groups per session**.  
-This reflects a **balanced and consistent approach** to workout planning.
----
+Excluding cardio and null entries, the 47 recorded training days consistently involved 3 muscle groups per session. This reflects a balanced and consistent approach to workout planning.
 
+---
 ## 📊 Next Steps
 - Perform analysis of progress and performance trends (weights lifted, reps, RIR).  
 - Build visualizations to show improvement over time.  
