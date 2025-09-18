@@ -124,6 +124,7 @@ measure_name = avg_count
     COUNTROWS(question_5),              -- total number of training records
     DISTINCTCOUNT(question_5[real_week]) -- number of unique weeks
 )
+```
 
 This measure ensured that the average was calculated **per week** rather than per day or overall, giving a more accurate reflection of training consistency.
 
