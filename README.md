@@ -94,6 +94,52 @@ Overall, most rests were **short (1–2 days)**, complemented by occasional long
 Excluding cardio and null entries, the 47 recorded training days consistently involved 3 muscle groups per session. This reflects a balanced and consistent approach to workout planning.
 
 ---
+## Methodology, Reasoning, and Motivation
+
+All of these questions arose from **pure curiosity** and a desire to understand my training patterns, identify trends, and discover areas for improvement. I wanted to quantify how often I trained, which muscle groups were prioritized, and how consistent my workouts were over time.
+
+### 1. Real Week Column
+I created a new column called **“Real week”** to map each workout to its actual calendar week in 2025. The original **week** column only counted weeks based on the order of training days, not the actual calendar dates, so it did not provide accurate weekly frequency. With **Real week**, I could calculate **average trainings per week** more reliably.
+
+### 2. Training Focus Column
+I added a **“Training Focus”** column to categorize workouts as **Upper body**, **Lower body**, or **Other**:
+
+- **Upper body**: Chest, Back, Biceps, Triceps, Shoulders  
+- **Lower body**: Quadriceps, Glutes, Hamstrings, Calves  
+- **Other**: Any session that doesn’t fall into the above categories  
+
+This allowed me to answer questions like how often each area was trained in total and compare upper vs. lower body frequency.
+
+### 3. Muscle Group Analysis (Question 5)
+For the **muscle group count**, I copied the columns **Date, Weekday Plan, Muscle_Group_1, Muscle_Group_2, and Muscle_Group_3** into **Power Query**, then **unpivoted** them to a **long format**. I also added the **Real week** column to this new table.
+
+This step enabled me to see **how many times each muscle group was trained** across the 58 total workouts. It was necessary because some muscle groups, like Shoulders, appeared multiple times per week, and I wanted the total frequency over the period.
+
+### 4. Pivot Table & Average per Week (Question 8)
+Using my central dataset (**GymTracker**), I created a **Pivot Table** to count how many times each muscle group was trained per week. I then enabled the **Data Model** and added a **DAX measure** to calculate the **average number of times each muscle group was trained per week**:
+
+```DAX
+measure_name = avg_count
+=DIVIDE(
+    COUNTROWS(question_5),              -- total number of training records
+    DISTINCTCOUNT(question_5[real_week]) -- number of unique weeks
+)
+
+This measure ensured that the average was calculated **per week** rather than per day or overall, giving a more accurate reflection of training consistency.
+
+## Overall Reasoning
+
+Each step was designed to systematically analyze my workouts:
+
+- **Frequency per week** shows consistency
+- **Day-of-week analysis** identifies patterns in gym attendance
+- **Muscle group count and focus** highlights emphasis on certain muscles and identifies potential imbalances
+- **Rest patterns** reveal recovery periods and pacing
+- **Session volume** shows training intensity and structure
+
+By combining these methods, I was able to construct a **complete picture of my 100-day training period**, quantify habits, and highlight opportunities for a **more balanced and efficient routine**.
+
+---
 ## 📊 Next Steps
 - Perform analysis of progress and performance trends (weights lifted, reps, RIR).  
 - Build visualizations to show improvement over time.  
