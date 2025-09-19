@@ -198,8 +198,8 @@ This analysis describes the workflow used to analyze and visualize my strength t
 
 3. **Exercises Performed >5 Times:**  
    - Excludes exercises with insufficient data to reliably track trends.  
-   - Exercises performed fewer than 5 times **won't provide enough information** to analyze meaningful progress.
-   -   
+   - These exercises are ones that I perform **less frequently compared to the other exercises**, so including them could create misleading averages or charts that do not accurately reflect my progress.  
+   - By focusing on exercises done more often, the analysis ensures that charts, averages, and trends are based on **consistent and substantial data**, giving a more reliable picture of performance improvement.
 ---
 
 This workflow allows tracking **strength progress over time**, evaluating intensity, and understanding performance trends per exercise
