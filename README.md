@@ -141,14 +141,70 @@ Each step was designed to systematically analyze my workouts:
 By combining these methods, I was able to construct a **complete picture of my 100-day training period**, quantify habits, and highlight opportunities for a **more balanced and efficient routine**.
 
 ---
-## 📊 Next Steps
-- Perform analysis of progress and performance trends (weights lifted, reps, RIR).  
-- Build visualizations to show improvement over time.  
-- Generate actionable insights on training patterns.  
+
+- During analysis, I detected 2 typos (‘Caardio’ instead of ‘Cardio’ in the column muscle_group_1, "Shoulder" instead of "Shoulders" in the column muscle_group_2). The errors were corrected in the cleaning stage to maintain consistency
 
 ---
 
-- During analysis, I detected 2 typos (‘Caardio’ instead of ‘Cardio’ in the column muscle_group_1, "Shoulder" instead of "Shoulders" in the column muscle_group_2). The errors were corrected in the cleaning stage to maintain consistency
+# Excel Strength Tracker Workflow
+
+This analysis describes the workflow used to analyze and visualize my strength training dataset (the second table) in Excel.
+
+## 1. Extracting Exercises
+
+- Pulled all exercises from the `StrengthTracker` table using the `UNIQUE` formula on the `exercise_name_clean` column.
+- Counted the number of times each exercise was performed over the 58-day timeframe.
+- Excluded exercises performed **less than 5 times**.
+- Excluded the "null" muscular group, which represents empty slots in workouts (max 9 exercises per workout).
+
+> The filtered dataset now contains **23 exercises**.
+
+## 2. Setting up Data Validation
+
+- Created a named formula `=exercises_filtered` containing the 23 filtered exercises.
+- This allows the user to select an exercise from a drop-down menu for further analysis.
+
+## 3. Progress Line Chart
+
+- Once an exercise is selected:
+  - A **line chart** shows progress over time.
+  - **X-axis:** Date of workout.
+  - **Y-axis:** Weight lifted (kg) for **Set 1 only** (strongest set).
+- Other sets were excluded to focus on meaningful progress.
+
+## 4. Supporting Table
+
+- A table on the right displays additional information for the selected exercise (Set 1 only):
+  - Reps
+  - RIR (Reps In Reserve)
+  - Times trained
+  - Average weight (kg)
+  - Maximum total weight lifted
+  - Maximum reps performed
+
+## 5. Weight vs Reps Scatterplot
+
+- A scatterplot below the table displays the relationship between **weight (X-axis)** and **reps (Y-axis)** for the selected exercise.
+
+## 6. Justification of Analysis Choices
+
+1. **Data Validation:**  
+   - Ensures the user selects a valid exercise from the filtered list, avoiding errors from manual input.
+   - Simplifies analysis by dynamically linking the selected exercise to charts and tables.
+
+2. **Set 1 Only:**  
+   - Set 1 usually represents **peak performance**.
+   - Analyzing only Set 1 avoids inconsistencies from warm-up or fatigued sets, providing a clearer view of progress.
+
+3. **Exercises Performed >5 Times:**  
+   - Excludes exercises with insufficient data to reliably track trends.  
+   - Exercises performed fewer than 5 times **won't provide enough information** to analyze meaningful progress.
+   -   
+---
+
+This workflow allows tracking **strength progress over time**, evaluating intensity, and understanding performance trends per exercise
+
+---
 
 ## 🚀 Skills Demonstrated
 - Data cleaning and transformation with **Power Query (M language)**  
