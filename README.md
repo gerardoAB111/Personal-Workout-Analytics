@@ -5,6 +5,13 @@ A structured record of my personal gym journey over three months, detailing each
 
 ---
 
+## Data Source
+The data used in this project is **primary data**, which I personally collected by logging my own workouts.  
+All entries reflect my training sessions, and the analysis is based entirely on this self-gathered dataset.  
+This ensures the project demonstrates not only technical skills in Excel and data analysis, but also the ability to design and manage a complete workflow from data collection to insights.
+
+---
+
 ## 📊 Excel Workbook
 All visualizations, pivot tables, and the full analysis workflow are stored in the Excel file included in this repository:  
 `gym_tracker_project.xlsx`
