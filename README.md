@@ -233,7 +233,9 @@ measure_name = avg_kg_set_1
     Table14[kg_set_1_clean]
 )
 ```
-
+## Technical Implementation
+To make the analysis possible, I designed a **custom logging system in Visual Basic for Applications (VBA)**. This tool allowed me to input each workout efficiently and store it directly into a structured Excel table. By automating data entry and enforcing a consistent format, I eliminated manual errors, ensured data integrity, and created a repeatable process for tracking future workouts. This step highlights my ability to combine **automation, data engineering, and analysis** within Excel, turning raw inputs into a clean dataset ready for Power Query, PivotTables, and DAX calculations.
+🎥 Demo Video => https://youtu.be/g9m971bRQEU
 
 
 ## 🚀 Skills Demonstrated
@@ -242,4 +244,27 @@ measure_name = avg_kg_set_1
 - Structuring raw exercise logs into a quantifiable dataset  
 - Preparing the foundation for **analysis and visualization**  
 
+---
+# Executive Summary
+
+This analysis covers **100 days of workout data** (58 training sessions) with the goal of uncovering trends in training frequency, muscle group balance, and overall efficiency.
+
+## Key Findings
+- Trained on average **4 times per week**, with **Tuesday** as the most frequent gym day. This rhythm reflects consistent time management and adequate recovery between sessions.  
+- Most muscle groups were trained **once per week**, except for **shoulders and chest**, which averaged twice weekly. **Upper body** was prioritized significantly over **lower body** (44 vs. 12 sessions).  
+- Average rest period between sessions was **2 days**, which allowed recovery but left room for better planning.  
+- Progress was most notable in the **Incline Dumbbell Press, Dumbbell Military Press, and Squats**. The scatterplot confirmed the expected trade-off: **higher weights → fewer reps**.  
+- Each workout averaged **6 exercises**, with consistent tracking across weight, reps, and RIR per set.  
+
+## Recommended Actions
+1. **Balance training** – Increase lower-body sessions to correct the imbalance and promote overall muscle growth.  
+2. **Prioritize quality over quantity** – Reduce average exercises per session to improve focus and efficiency, especially for weaker muscle groups.  
+3. **Maintain consistency** – Keep the current workflow and time management structure, which has proven effective.  
+
+## Next Steps
+To deepen the analysis, I plan to expand the dataset with lifestyle metrics such as **workout start/finish times, sleep hours, and post-session wellness (self-rated 1–10)**. Including diet and recovery data will provide a more holistic picture and enable more precise conclusions.  
+
+---
+
+**Key takeaway:** The system works — but improving lower body training, fine-tuning exercise volume, and integrating wellness metrics will drive more balanced and sustainable progress.
 ---
