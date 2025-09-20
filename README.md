@@ -205,6 +205,36 @@ This analysis describes the workflow used to analyze and visualize my strength t
 This workflow allows tracking **strength progress over time**, evaluating intensity, and understanding performance trends per exercise
 
 ---
+## 13. What is the average number of exercises performed per workout session?			
+- I pulled the day, order_of_exercise, and exercise_name_clean columns from the Strength Tracker table, so I could identify which exercise typically appeared in each order.
+- Then I created a new column called Value, which takes 1 when there is an exercise and 0 when it’s a null entry.
+- In other words: 1 = Exercise / 0 = Null exercise.
+- This allowed me to count how many exercises I actually performed in a workout, while excluding the null entries.
+- Once I grouped by workout day and exercises performed, I could calculate the average number of exercises per workout across all sessions.
+
+## 14. What is the typical exercise order for each exercise during a workout session?
+- Building on the previous step, I filtered the dataset by order_of_exercise and stacked all exercises that appeared in the 1st order, 2nd order, and so on.
+- The results confirmed that first-position exercises were usually compound lifts like Chest – Incline Dumbbell Press, Lats – Lat Pulldown (Wide, Close, Underhand), Quads – Squat (Back, Front, Goblet), and Shoulders – Machine Shoulder Press.
+- This makes sense, since compound movements are usually prioritized at the start of a workout.
+
+## 15. Set-level Exercise Breakdown	
+- I created a pivot table to calculate the average kg lifted, reps performed, and RIR for each of the 3 sets per exercise.
+- To avoid noise, I excluded exercises performed fewer than 5 times, since they don’t provide enough data for analysis.
+- Thanks to this pivot table, I can easily see the average kg, reps, and RIR across the 1st, 2nd, and 3rd sets of each exercise.
+- To calculate avg_kg_set_1, avg_kg_set_2, and avg_kg_set_3, I used DAX. Example code:
+  
+```DAX
+measure_name = avg_kg_set_1
+=AVERAGEX (
+    FILTER (
+        Table14;
+        Table14[kg_set_1_clean] <> 0
+    );
+    Table14[kg_set_1_clean]
+)
+```
+
+
 
 ## 🚀 Skills Demonstrated
 - Data cleaning and transformation with **Power Query (M language)**  
