@@ -128,7 +128,7 @@ measure_name = avg_count
     COUNTROWS(question_5),
     DISTINCTCOUNT(question_5[real_week])
 )
-
+```
 # Excel Strength Tracker Workflow
 
 ## 1. Extracting Exercises
