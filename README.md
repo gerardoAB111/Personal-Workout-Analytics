@@ -3,17 +3,33 @@
 ## 📌 Project Overview
 A structured record of my personal gym journey over three months, detailing each workout day, exercises performed, weights, reps, and additional cardio, core, wrist, and forearm training.  
 
-This project demonstrates:
-- Data organization  
-- Tracking progress  
-- Cleaning and transforming raw inputs  
-- Analyzing performance trends  
+---
+
+## Executive Summary
+This analysis covers **100 days of workout data** (58 training sessions) with the goal of uncovering trends in training frequency, muscle group balance, and overall efficiency.
+
+### Key Findings
+- Trained on average **4 times per week**, with **Tuesday** as the most frequent gym day. This rhythm reflects consistent time management and adequate recovery between sessions.  
+- Most muscle groups were trained **once per week**, except for **shoulders and chest**, which averaged twice weekly. **Upper body** was prioritized significantly over **lower body** (44 vs. 12 sessions).  
+- Average rest period between sessions was **2 days**, which allowed recovery but left room for better planning.  
+- Progress was most notable in the **Incline Dumbbell Press, Dumbbell Military Press, and Squats**. The scatterplot confirmed the expected trade-off: **higher weights → fewer reps**.  
+- Each workout averaged **6 exercises**, with consistent tracking across weight, reps, and RIR per set.  
+
+### Recommended Actions
+1. **Balance training** – Increase lower-body sessions to correct the imbalance and promote overall muscle growth.  
+2. **Prioritize quality over quantity** – Reduce average exercises per session to improve focus and efficiency, especially for weaker muscle groups.  
+3. **Maintain consistency** – Keep the current workflow and time management structure, which has proven effective.  
+
+### Next Steps
+To deepen the analysis, I plan to expand the dataset with lifestyle metrics such as **workout start/finish times, sleep hours, and post-session wellness (self-rated 1–10)**. Including diet and recovery data will provide a more holistic picture and enable more precise conclusions.  
+
+**Key takeaway:** The system works — but improving lower body training, fine-tuning exercise volume, and integrating wellness metrics will drive more balanced and sustainable progress.
 
 ---
 
 ## 🛠 Data Collection
 - **Type:** Primary data (self-collected and documented)  
-- **Period:** The dataset covers a period of a little over 3 months (from April 28, 2025 to August 6, 2025). 
+- **Period:** The dataset covers a period of a little over 3 months (from April 28, 2025 to August 6, 2025).  
 - **Content:** Exercises, sets, reps, weights (kg), RIR (Reps in Reserve), cardio and accessory training.  
 
 ---
@@ -44,227 +60,154 @@ I used **Power Query (M language)** for cleaning and structuring the dataset.
    - ✅ No `null` or `NA` values remain.  
 
 ---
-## Analysis - Questions, Answers, Reasoning, and Insights
+
+## Analysis – Questions, Answers, Reasoning, and Insights
 
 ### 1. Dataset Timeframe
 **My data spans from April 28 to August 6, covering a total of 100 calendar days.**
 
 ### 2. Average Trainings per Week
-Using the **Real Week** column from our central table, we can see in which weeks of 2025 workouts were performed.  
-**On average, I trained 4 times per week.**
+On average, I trained **4 times per week**.  
 
 ### 3. Day of the Week with Most Gym Visits
-**Tuesday** was the day with the most sessions, totaling **13 visits (22% of workouts)**, while **Thursday** had the fewest, with **6 sessions (10%)**.  
-No workouts were recorded on **Sundays** during this period.
+**Tuesday** was the most frequent with **13 visits (22%)**, while **Thursday** had the fewest (**6 sessions, 10%**).  
+No workouts were recorded on **Sundays**.  
 
 ### 4. Training Count by Weekday Plan
-The **push routine** was the most frequent, with **24 sessions out of 58 workouts (41%)**.  
-This aligns with personal observations, as these muscle groups showed the greatest strength and muscle development.  
-*While anecdotal, this illustrates the link between training frequency and muscle development.*
+- **Push routine** dominated with **24 sessions (41%)**.  
+- This aligns with observed muscle development.  
 
 ### 5. Muscle Group Count
-Across **58 training days**, I worked **10 different muscle groups**, with the greatest focus on **Shoulders (64%)** and the least on **Glutes (9%)**.
+Worked **10 muscle groups** across 58 training days.  
+- Most trained: **Shoulders (64%)**  
+- Least trained: **Glutes (9%)**  
 
 ### 6. Type of Training After Strength Workouts
-- **No additional training (neither cardio nor core/wrist/forearm):** 30 times (**52%**)  
+- **No additional training:** 30 times (**52%**)  
 - **Cardio:** 23 times (**40%**)  
 - **Core/Wrist/Forearm (CWF):** 5 times (**9%**)  
 
-### 7. Total Training in 3 Months (100 Days)
-I trained on **58 of 100 days**, accounting for **58% of the period**.
+### 7. Total Training in 3 Months
+**58 of 100 days trained → 58% coverage**  
 
 ### 8. Average Weekly Frequency per Muscle Group
-Between **weeks 18 and 32 of 2025**, I recorded **58 workouts**.  
-- Most muscle groups were trained **once per week**.  
-- **Shoulders** and **Triceps** were trained **twice per week**, showing an emphasis on the upper body.  
-- Leg muscles (**Quadriceps, Glutes, Hamstrings**) were trained less frequently, highlighting an opportunity for a more balanced plan.  
-*Note: Cardio days were entered in all three “muscle group” columns but counted as only one session per day.*
+- Most muscle groups trained **once/week**.  
+- **Shoulders and Triceps** → twice/week.  
+- Legs under-trained.  
 
 ### 9. Upper vs. Lower Body Training
 - **Upper body:** 44 sessions  
 - **Lower body:** 12 sessions  
-- **Other (full cardio days):** 2 sessions  
+- **Other (cardio only):** 2 sessions  
 
 ### 10. Average Rest Days
-The average rest period between workouts was **2 days**.  
-While consistency was maintained, some weeks included longer breaks for deeper recovery.  
-Overall, most rests were **short (1–2 days)**, complemented by occasional longer breaks.
+**2 days average rest** between sessions.  
 
 ### 11. Average Session Volume
-Excluding cardio and null entries, the 47 recorded training days consistently involved 3 muscle groups per session. This reflects a balanced and consistent approach to workout planning.
+Typical day: **3 muscle groups/session**, excluding cardio.  
 
 ---
+
 ## Methodology, Reasoning, and Motivation
+Curiosity drove me to quantify my training consistency, intensity, and balance.  
 
-All of these questions arose from **pure curiosity** and a desire to understand my training patterns, identify trends, and discover areas for improvement. I wanted to quantify how often I trained, which muscle groups were prioritized, and how consistent my workouts were over time.
+### Real Week Column
+Mapped workouts to **actual calendar weeks** for accurate averages.  
 
-### 1. Real Week Column
-I created a new column called **“Real week”** to map each workout to its actual calendar week in 2025. The original **week** column only counted weeks based on the order of training days, not the actual calendar dates, so it did not provide accurate weekly frequency. With **Real week**, I could calculate **average trainings per week** more reliably.
+### Training Focus Column
+Categorized sessions as **Upper**, **Lower**, or **Other**.  
 
-### 2. Training Focus Column
-I added a **“Training Focus”** column to categorize workouts as **Upper body**, **Lower body**, or **Other**:
+### Muscle Group Analysis
+Unpivoted muscle group columns → long format → counted training frequency.  
 
-- **Upper body**: Chest, Back, Biceps, Triceps, Shoulders  
-- **Lower body**: Quadriceps, Glutes, Hamstrings, Calves  
-- **Other**: Any session that doesn’t fall into the above categories  
-
-This allowed me to answer questions like how often each area was trained in total and compare upper vs. lower body frequency.
-
-### 3. Muscle Group Analysis (Question 5)
-For the **muscle group count**, I copied the columns **Date, Weekday Plan, Muscle_Group_1, Muscle_Group_2, and Muscle_Group_3** into **Power Query**, then **unpivoted** them to a **long format**. I also added the **Real week** column to this new table.
-
-This step enabled me to see **how many times each muscle group was trained** across the 58 total workouts. It was necessary because some muscle groups, like Shoulders, appeared multiple times per week, and I wanted the total frequency over the period.
-
-### 4. Pivot Table & Average per Week (Question 8)
-Using my central dataset (**GymTracker**), I created a **Pivot Table** to count how many times each muscle group was trained per week. I then enabled the **Data Model** and added a **DAX measure** to calculate the **average number of times each muscle group was trained per week**:
-
+### Pivot Table & DAX
+Measured average muscle group frequency/week:  
 ```DAX
 measure_name = avg_count
 =DIVIDE(
-    COUNTROWS(question_5),              -- total number of training records
-    DISTINCTCOUNT(question_5[real_week]) -- number of unique weeks
+    COUNTROWS(question_5),
+    DISTINCTCOUNT(question_5[real_week])
 )
-```
-
-This measure ensured that the average was calculated **per week** rather than per day or overall, giving a more accurate reflection of training consistency.
-
-## Overall Reasoning
-
-Each step was designed to systematically analyze my workouts:
-
-- **Frequency per week** shows consistency
-- **Day-of-week analysis** identifies patterns in gym attendance
-- **Muscle group count and focus** highlights emphasis on certain muscles and identifies potential imbalances
-- **Rest patterns** reveal recovery periods and pacing
-- **Session volume** shows training intensity and structure
-
-By combining these methods, I was able to construct a **complete picture of my 100-day training period**, quantify habits, and highlight opportunities for a **more balanced and efficient routine**.
-
----
-
-- During analysis, I detected 2 typos (‘Caardio’ instead of ‘Cardio’ in the column muscle_group_1, "Shoulder" instead of "Shoulders" in the column muscle_group_2). The errors were corrected in the cleaning stage to maintain consistency
-
----
 
 # Excel Strength Tracker Workflow
 
-This analysis describes the workflow used to analyze and visualize my strength training dataset (the second table) in Excel.
-
 ## 1. Extracting Exercises
+- Filtered exercises performed ≥5 times → **23 valid exercises**.
 
-- Pulled all exercises from the `StrengthTracker` table using the `UNIQUE` formula on the `exercise_name_clean` column.
-- Counted the number of times each exercise was performed over the 58-day timeframe.
-- Excluded exercises performed **less than 5 times**.
-- Excluded the "null" muscular group, which represents empty slots in workouts (max 9 exercises per workout).
-
-> The filtered dataset now contains **23 exercises**.
-
-## 2. Setting up Data Validation
-
-- Created a named formula `=exercises_filtered` containing the 23 filtered exercises.
-- This allows the user to select an exercise from a drop-down menu for further analysis.
+## 2. Data Validation
+- Drop-down list (`=exercises_filtered`) for analysis.
 
 ## 3. Progress Line Chart
-
-- Once an exercise is selected:
-  - A **line chart** shows progress over time.
-  - **X-axis:** Date of workout.
-  - **Y-axis:** Weight lifted (kg) for **Set 1 only** (strongest set).
-- Other sets were excluded to focus on meaningful progress.
+- Line chart: **Date (X)** vs. **Weight (Y, Set 1 only)**.
 
 ## 4. Supporting Table
-
-- A table on the right displays additional information for the selected exercise (Set 1 only):
-  - Reps
-  - RIR (Reps In Reserve)
-  - Times trained
-  - Average weight (kg)
-  - Maximum total weight lifted
-  - Maximum reps performed
+- Shows **reps, RIR, times trained, averages, and maximums**.
 
 ## 5. Weight vs Reps Scatterplot
+- Displays **weight/reps relationship**.
 
-- A scatterplot below the table displays the relationship between **weight (X-axis)** and **reps (Y-axis)** for the selected exercise.
+## 13. Average Exercises per Session
+- Created binary **Value** column (1 = exercise, 0 = null) → grouped → average = **6 exercises/session**.
 
-## 6. Justification of Analysis Choices
+## 14. Typical Exercise Order
+- Confirmed **compound lifts** (squat, press, pulldown) usually appear first.
 
-1. **Data Validation:**  
-   - Ensures the user selects a valid exercise from the filtered list, avoiding errors from manual input.
-   - Simplifies analysis by dynamically linking the selected exercise to charts and tables.
+## 15. Set-level Exercise Breakdown
+- Pivot tables + DAX for **average kg, reps, RIR per set**.
 
-2. **Set 1 Only:**  
-   - Set 1 usually represents **peak performance**.
-   - Analyzing only Set 1 avoids inconsistencies from warm-up or fatigued sets, providing a clearer view of progress.
-
-3. **Exercises Performed >5 Times:**  
-   - Excludes exercises with insufficient data to reliably track trends.  
-   - These exercises are ones that I perform **less frequently compared to the other exercises**, so including them could create misleading averages or charts that do not accurately reflect my progress.  
-   - By focusing on exercises done more often, the analysis ensures that charts, averages, and trends are based on **consistent and substantial data**, giving a more reliable picture of performance improvement.
----
-
-This workflow allows tracking **strength progress over time**, evaluating intensity, and understanding performance trends per exercise
-
----
-## 13. What is the average number of exercises performed per workout session?			
-- I pulled the day, order_of_exercise, and exercise_name_clean columns from the Strength Tracker table, so I could identify which exercise typically appeared in each order.
-- Then I created a new column called Value, which takes 1 when there is an exercise and 0 when it’s a null entry.
-- In other words: 1 = Exercise / 0 = Null exercise.
-- This allowed me to count how many exercises I actually performed in a workout, while excluding the null entries.
-- Once I grouped by workout day and exercises performed, I could calculate the average number of exercises per workout across all sessions.
-
-## 14. What is the typical exercise order for each exercise during a workout session?
-- Building on the previous step, I filtered the dataset by order_of_exercise and stacked all exercises that appeared in the 1st order, 2nd order, and so on.
-- The results confirmed that first-position exercises were usually compound lifts like Chest – Incline Dumbbell Press, Lats – Lat Pulldown (Wide, Close, Underhand), Quads – Squat (Back, Front, Goblet), and Shoulders – Machine Shoulder Press.
-- This makes sense, since compound movements are usually prioritized at the start of a workout.
-
-## 15. Set-level Exercise Breakdown	
-- I created a pivot table to calculate the average kg lifted, reps performed, and RIR for each of the 3 sets per exercise.
-- To avoid noise, I excluded exercises performed fewer than 5 times, since they don’t provide enough data for analysis.
-- Thanks to this pivot table, I can easily see the average kg, reps, and RIR across the 1st, 2nd, and 3rd sets of each exercise.
-- To calculate avg_kg_set_1, avg_kg_set_2, and avg_kg_set_3, I used DAX. Example code:
-  
-```DAX
+```
 measure_name = avg_kg_set_1
 =AVERAGEX (
-    FILTER (
-        Table14;
-        Table14[kg_set_1_clean] <> 0
-    );
+    FILTER (Table14, Table14[kg_set_1_clean] <> 0),
     Table14[kg_set_1_clean]
 )
 ```
+---
 ## Technical Implementation
-To make the analysis possible, I designed a **custom logging system in Visual Basic for Applications (VBA)**. This tool allowed me to input each workout efficiently and store it directly into a structured Excel table. By automating data entry and enforcing a consistent format, I eliminated manual errors, ensured data integrity, and created a repeatable process for tracking future workouts. This step highlights my ability to combine **automation, data engineering, and analysis** within Excel, turning raw inputs into a clean dataset ready for Power Query, PivotTables, and DAX calculations.
-🎥 Demo Video => https://youtu.be/g9m971bRQEU
 
+To make the analysis possible, I designed a custom logging system in **Visual Basic for Applications (VBA).**
 
-## 🚀 Skills Demonstrated
-- Data cleaning and transformation with **Power Query (M language)**  
-- Data typing and error handling (`try...otherwise`)  
-- Structuring raw exercise logs into a quantifiable dataset  
-- Preparing the foundation for **analysis and visualization**  
+- Input each workout efficiently → stored directly in Excel table  
+- Automated data entry → eliminated errors  
+- Enforced consistent format → ensured data integrity  
+- Enabled repeatable process for tracking  
 
+This highlights my ability to combine **automation, data engineering, and analysis in Excel**, transforming raw inputs into structured datasets for **Power Query, PivotTables, and DAX**.
+
+🎥 Demo Video: (https://youtu.be/g9m971bRQEU)
 ---
-# Executive Summary
+## 💡 Skills Demonstrated
 
-This analysis covers **100 days of workout data** (58 training sessions) with the goal of uncovering trends in training frequency, muscle group balance, and overall efficiency.
+This project showcases a combination of **technical, analytical, and automation skills**:
 
-## Key Findings
-- Trained on average **4 times per week**, with **Tuesday** as the most frequent gym day. This rhythm reflects consistent time management and adequate recovery between sessions.  
-- Most muscle groups were trained **once per week**, except for **shoulders and chest**, which averaged twice weekly. **Upper body** was prioritized significantly over **lower body** (44 vs. 12 sessions).  
-- Average rest period between sessions was **2 days**, which allowed recovery but left room for better planning.  
-- Progress was most notable in the **Incline Dumbbell Press, Dumbbell Military Press, and Squats**. The scatterplot confirmed the expected trade-off: **higher weights → fewer reps**.  
-- Each workout averaged **6 exercises**, with consistent tracking across weight, reps, and RIR per set.  
+- **VBA Automation (Visual Basic for Applications)**  
+  - Designed a custom logging system to input workouts quickly and store them in a structured Excel table.  
+  - Automated data entry, enforced data integrity, and eliminated manual errors.  
 
-## Recommended Actions
-1. **Balance training** – Increase lower-body sessions to correct the imbalance and promote overall muscle growth.  
-2. **Prioritize quality over quantity** – Reduce average exercises per session to improve focus and efficiency, especially for weaker muscle groups.  
-3. **Maintain consistency** – Keep the current workflow and time management structure, which has proven effective.  
+- **Data Engineering in Excel**  
+  - Structured raw workout logs into a clean, analysis-ready dataset.  
+  - Built repeatable workflows for continuous tracking and updating.  
 
-## Next Steps
-To deepen the analysis, I plan to expand the dataset with lifestyle metrics such as **workout start/finish times, sleep hours, and post-session wellness (self-rated 1–10)**. Including diet and recovery data will provide a more holistic picture and enable more precise conclusions.  
+- **Power Query (M Language)**  
+  - Applied text/number extraction, type conversion, and error handling (`try…otherwise`).  
+  - Created a long-format dataset through unpivoting for muscle group analysis.  
 
+- **Data Analysis with PivotTables & DAX**  
+  - Designed custom measures for averages, frequencies, and trends.  
+  - Calculated training balance (upper vs. lower body) and per-week metrics.  
+
+- **Visualization & Insights**  
+  - Built line charts, scatterplots, and frequency charts to track strength progress and exercise efficiency.  
+  - Identified imbalances and trends in training routines.  
+
+- **Project Documentation**  
+  - Summarized methodology, findings, and recommendations clearly.  
+  - Created a structured README with executive summary, methods, and actionable insights.  
+
+👉 These skills demonstrate my ability to bridge **data collection, cleaning, analysis, and visualization** into a single, well-documented workflow — all within Excel enhanced by automation.
 ---
+## Notes
+During cleaning, corrected typos (Caardio → Cardio, Shoulder → Shoulders).
+All null/missing values addressed.
 
-**Key takeaway:** The system works — but improving lower body training, fine-tuning exercise volume, and integrating wellness metrics will drive more balanced and sustainable progress.
 ---
