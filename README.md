@@ -5,6 +5,17 @@ A structured record of my personal gym journey over three months, detailing each
 
 ---
 
+## 📊 Excel Workbook
+All visualizations, pivot tables, and the full analysis workflow are stored in the Excel file included in this repository:  
+`gym_tracker_project.xlsx`
+
+Open this file to explore:  
+- Interactive charts (progress over time, weight vs reps, exercise frequency)  
+- PivotTables for muscle group and training balance  
+- Set-level breakdowns (kg, reps, RIR)  
+
+---
+
 ## Executive Summary
 This analysis covers **100 days of workout data** (58 training sessions) with the goal of uncovering trends in training frequency, muscle group balance, and overall efficiency.
 
