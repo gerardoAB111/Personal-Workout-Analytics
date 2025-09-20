@@ -213,3 +213,10 @@ During cleaning, corrected typos (Caardio → Cardio, Shoulder → Shoulders).
 All null/missing values addressed.
 
 ---
+
+## 👤 Contact
+**Author:** Gerardo Abarca  
+📧 abarcagerardoj777@gmail.com 
+💼 https://www.linkedin.com/in/gerardo-abarca-2389b6328/
+
+---
