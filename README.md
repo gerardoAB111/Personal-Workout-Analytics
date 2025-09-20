@@ -175,6 +175,7 @@ To make the analysis possible, I designed a custom logging system in **Visual Ba
 This highlights my ability to combine **automation, data engineering, and analysis in Excel**, transforming raw inputs into structured datasets for **Power Query, PivotTables, and DAX**.
 
 🎥 Demo Video: (https://youtu.be/g9m971bRQEU)
+
 ---
 ## 💡 Skills Demonstrated
 
@@ -205,6 +206,7 @@ This project showcases a combination of **technical, analytical, and automation 
   - Created a structured README with executive summary, methods, and actionable insights.  
 
 👉 These skills demonstrate my ability to bridge **data collection, cleaning, analysis, and visualization** into a single, well-documented workflow — all within Excel enhanced by automation.
+
 ---
 ## Notes
 During cleaning, corrected typos (Caardio → Cardio, Shoulder → Shoulders).
